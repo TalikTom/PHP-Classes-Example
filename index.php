@@ -25,7 +25,12 @@ $customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
     <tr>
         <td><?= $account->number ?></td>
         <td><?= $account->type ?></td>
-        <td><?= $account->getBalance() ?></td>
+        <?php if($account->getBalance() >= 0) { ?>
+        <td class ="credit">
+        <?php } else { ?>
+        <td class ="overdrawn">
+        <?php } ?>
+        $<?= $account->getBalance() ?></td>
     </tr>
     <?php } ?>
 </table>
