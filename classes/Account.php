@@ -25,6 +25,6 @@ class Account {
 
     public function getBalance() :float
     {
-        return $this->balance
+        return $this->balance;
     }
 }

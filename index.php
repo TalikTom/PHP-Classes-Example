@@ -1,26 +1,33 @@
 <?php
-class Customer 
-{
-    public string $firstname;
-    public string $lastname;
-    public string $email;
-    public string $password;
-    public array $accounts;
+include 'classes/Account.php';
+include 'classes/Customer.php';
 
+$accounts =
+    [
+        new Account(123456789, 'Checking', -100),
+        new Account(987654321, 'Savings', 3000),
+    ];
 
-    function __construct(string $firstname, string $lastname, string $email, string $password, array $accounts)
-    {
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->email = $email;
-        $this->password = $password;
-        $this->accounts = $accounts;
-    }
-
-    function getFullName()
-    {
-        return $this->firstname . ' ' . $this->lastname;
-    }
-
-}
+$customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
 ?>
+
+<?php include 'includes/header.php'; ?>
+
+<h2>Name: <?= $customer->getFullName(); ?></h2>
+
+<table>
+    <tr>
+        <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+    </tr>
+    <?php foreach($customer->accounts as $account) { ?>
+    <tr>
+        <td><?= $account->number ?></td>
+        <td><?= $account->type ?></td>
+        <td><?= $account->getBalance() ?></td>
+    </tr>
+    <?php } ?>
+</table>
+
+<?php include 'includes/footer.php'; ?>
