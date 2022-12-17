@@ -21,16 +21,24 @@ $customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
         <th>Account Type</th>
         <th>Balance</th>
     </tr>
+
     <?php foreach($customer->accounts as $account) { ?>
     <tr>
         <td><?= $account->number ?></td>
         <td><?= $account->type ?></td>
+
         <?php if($account->getBalance() >= 0) { ?>
+
         <td class ="credit">
+
         <?php } else { ?>
+
         <td class ="overdrawn">
+
         <?php } ?>
+
         $<?= $account->getBalance() ?></td>
+        
     </tr>
     <?php } ?>
 </table>
