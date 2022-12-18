@@ -10,6 +10,8 @@ $accounts =
 
 $customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts);
 
+$text = 'Testing built-in functions';
+
 ?>
 
 <?php include 'includes/header.php'; ?>
@@ -64,6 +66,29 @@ echo "The time is " . date("h:i:sa");
     <tr><th>PATH from document root</th><td><?= $_SERVER['SCRIPT_NAME'] ?></td></tr>
     <tr><th>Absolute path</th><td><?= $_SERVER['SCRIPT_FILENAME'] ?></td></tr>
 
+</table>
+
+<table>
+    <tr>
+        <th>Lowercase:</th>
+        <td><?= strtolower($text) ?></td>
+    </tr>
+    <tr>
+        <th>Uppercase:</th>
+        <td><?= strtoupper($text) ?></td>
+    </tr>
+    <tr>
+        <th>Uppercase first letter:</th>
+        <td><?= ucwords($text) ?></td>
+    </tr>
+    <tr>
+        <th>Character count:</th>
+        <td><?= strlen($text) ?></td>
+    </tr>
+    <tr>
+        <th>Word count:</th>
+        <td><?= str_word_count($text) ?></td>
+    </tr>
 </table>
 
 <?php include 'includes/footer.php'; ?>
