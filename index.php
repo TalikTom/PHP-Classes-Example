@@ -12,6 +12,8 @@ $customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
 
 $text = 'Testing built-in functions';
 
+$image = "/xampp/htdocs/PHP-Classes-Example/img/"
+
 ?>
 
 <?php include 'includes/header.php'; ?>
@@ -122,4 +124,16 @@ echo "The time is " . date("h:i:sa");
     </tr>
 </table>
 
+<section>
+    <p>Remove '/' from both ends:</p><br>
+    <?= trim($image, '/'); ?> <br>
+    <p>Remove '/' from left side:</p><br>
+    <?= ltrim($image, '/'); ?> <br>
+    <p>Remove '/' from right side:</p><br>
+    <?= rtrim($image, '/'); ?> <br>
+    <p>Replace 'xampp' with 'mamp':</p><br>
+    <?= str_replace('xampp', 'mamp', $image); ?> <br>
+    <p>String repeat:</p><br>
+    <?= str_repeat($image, 3); ?> <br>
+</section>
 <?php include 'includes/footer.php'; ?>
