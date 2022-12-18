@@ -91,4 +91,35 @@ echo "The time is " . date("h:i:sa");
     </tr>
 </table>
 
+<table>
+    <tr>
+        <th>First match (case-sensitive):</th>
+        <td>"T" - <?=strpos($text, 'T'); ?></td>
+        <td>"t"- <?=strpos($text, 't'); ?></td>
+    </tr>
+    <tr>
+        <th>First match (case-insensitive)</th>
+        <td>"T" - <?=stripos($text, 'T'); ?></td>
+        <td>"t" - <?=stripos($text, 't'); ?></td>
+    </tr>
+    <tr>
+        <th>Last match (case-sensitive):</th>
+        <td>"T" - <?=strrpos($text, 'T'); ?></td>
+        <td>"t"- <?=strrpos($text, 't'); ?></td>
+    </tr>
+    <tr>
+        <th>Last match (case-insensitive)</th>
+        <td>"T" - <?=strripos($text, 'T'); ?></td>
+        <td>"t" - <?=strripos($text, 't'); ?></td>
+    </tr>
+    <tr>
+        <th>Text after first match (case-sensitive)</th>
+        <td>"B" - <?=strstr($text, 'B'); ?></td>
+    </tr>
+    <tr>
+        <th>Text after first match (case-insensitive)</th>
+        <td>"B" - <?=stristr($text, 'B'); ?></td>
+    </tr>
+</table>
+
 <?php include 'includes/footer.php'; ?>
