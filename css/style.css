@@ -33,7 +33,9 @@ h2 {
 }
 
 table {
-    border-collapse: collapse;
+    padding: 2em;
+    line-height: 1.8em;
+    text-align: left;
 }
 
 td,
@@ -68,4 +70,9 @@ td.credit {
 
 td.overdrawn {
     color: #fca905;
+}
+
+th.title {
+    color: #fff;
+    border-bottom: 1px dashed #dab655;
 }
