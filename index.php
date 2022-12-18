@@ -8,12 +8,19 @@ $accounts =
         new Account(987654321, 'Savings', 3000),
     ];
 
-$customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
+$customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts);
+
 ?>
 
 <?php include 'includes/header.php'; ?>
 
 <h2>Name: <?= $customer->getFullName(); ?></h2>
+
+<p><a href="phpinfo.php">PHP Info</a></p>
+
+<?php
+echo "The time is " . date("h:i:sa");
+?>
 
 <table>
     <tr>
