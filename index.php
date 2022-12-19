@@ -14,7 +14,7 @@ $text = 'Testing built-in functions';
 
 $image = "/xampp/htdocs/PHP-Classes-Example/img/";
 
-$greetings = ['Hello', 'Hi', 'Vozdra', 'Hidy ho'];
+$greetings = ['Hello ', 'Hi ', 'Vozdra ', 'Hidy ho '];
 
 $greeting_key = array_rand($greetings);
 
