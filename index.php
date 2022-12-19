@@ -20,6 +20,11 @@ $greeting_key = array_rand($greetings);
 
 $greeting = $greetings[$greeting_key];
 
+$bestsellers = ['notebook', 'pencil', 'ink'];
+
+$bestsellers_count = count($bestsellers);
+
+$bestellers_text = implode(', ', $bestsellers);
 $buyer =
     [
         'firstname' => 'Luka',
@@ -30,6 +35,16 @@ $buyer =
 if (array_key_exists('firstname', $buyer)) {
     $greeting .= $buyer['firstname'];
 }
+
+$cities =
+    [
+        'Zagreb' => 'Vukovarska 452, 10000',
+        'Osijek' => 'Zagrebacka 12, 31000',
+        'Vukovar' => 'Osjecka 10, 32000'
+    ];
+
+$city = isset($_GET['city']) ? $_GET['city'] : '';
+$address = $cities[$city];
 
 ?>
 
@@ -153,4 +168,16 @@ echo "The time is " . date("h:i:sa");
     <p>String repeat:</p><br>
     <?= str_repeat($image, 3); ?> <br>
 </section>
+
+<p>
+    Our top <?= $bestsellers_count ?> items today are:
+    <b><?= $bestellers_text ?></b>
+</p>
+
+<?php foreach($cities as $key => $values) { ?>
+    <a href="?city=<?= $key ?>"><?= $key ?></a>
+<?php } ?>
+<p><?= $city ?></p>
+<p><?= $address ?></p>
+
 <?php include 'includes/footer.php'; ?>
