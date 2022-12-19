@@ -12,13 +12,30 @@ $customer = new Customer('Luka', 'Agic', 'luka@gmail.com', 'hunter2', $accounts)
 
 $text = 'Testing built-in functions';
 
-$image = "/xampp/htdocs/PHP-Classes-Example/img/"
+$image = "/xampp/htdocs/PHP-Classes-Example/img/";
+
+$greetings = ['Hello', 'Hi', 'Vozdra', 'Hidy ho'];
+
+$greeting_key = array_rand($greetings);
+
+$greeting = $greetings[$greeting_key];
+
+$buyer =
+    [
+        'firstname' => 'Luka',
+        'lastname' => 'Agic',
+        'email' => 'luka@gmail.com'
+    ];
+
+if (array_key_exists('firstname', $buyer)) {
+    $greeting .= $buyer['firstname'];
+}
 
 ?>
 
 <?php include 'includes/header.php'; ?>
 
-<h2>Name: <?= $customer->getFullName(); ?></h2>
+<h2><?= $greeting ?></h2>
 
 <p><a href="phpinfo.php">PHP Info</a></p>
 
