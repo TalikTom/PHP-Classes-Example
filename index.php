@@ -45,6 +45,13 @@ $cities =
 
 $city = isset($_GET['city']) ? $_GET['city'] : '';
 $address = $cities[$city];
+if ($city) {
+
+    $address = $cities[$city];
+
+} else {
+    $address = 'Please select a city';
+}
 
 ?>
 
