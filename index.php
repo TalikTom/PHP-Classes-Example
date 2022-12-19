@@ -45,7 +45,8 @@ $cities =
 
 $city = isset($_GET['city']) ? $_GET['city'] : '';
 $address = $cities[$city];
-if ($city) {
+$valid = array_key_exists($city, $cities);
+if ($valid) {
 
     $address = $cities[$city];
 
