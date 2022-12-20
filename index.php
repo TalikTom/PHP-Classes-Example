@@ -54,6 +54,12 @@ if ($valid) {
     $address = 'Please select a city';
 }
 
+if(!$valid) {
+    http_response_code(404);
+    header('Location: page-not-found.php');
+    exit;
+}
+
 ?>
 
 <?php include 'includes/header.php'; ?>
