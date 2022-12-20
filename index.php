@@ -60,6 +60,13 @@ if(!$valid) {
     exit;
 }
 
+$message = $_GET['msg'] ?? 'Click link on the bottom of the page';
+
+function html_escape(string $string): string
+{
+    return htmlspecialchars($string, ENT_QUOTES | ENT_HTML5, 'UTf-8', true);
+}
+
 ?>
 
 <?php include 'includes/header.php'; ?>
@@ -193,5 +200,9 @@ echo "The time is " . date("h:i:sa");
 <?php } ?>
 <p><?= $city ?></p>
 <p><?= $address ?></p>
+
+<h4>XSS attack example</h4>
+<a href="?msg=<script src=js/bad.js></script>" class="badlink">Link to demo xss attack</a>
+<p><?= htmlspecialchars($message) ?></p>
 
 <?php include 'includes/footer.php'; ?>
