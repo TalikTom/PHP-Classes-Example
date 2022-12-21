@@ -54,11 +54,7 @@ if ($valid) {
     $address = 'Please select a city';
 }
 
-if(!$valid) {
-    http_response_code(404);
-    header('Location: page-not-found.php');
-    exit;
-}
+
 
 $message = $_GET['msg'] ?? 'Click link on the bottom of the page';
 
@@ -66,6 +62,8 @@ function html_escape(string $string): string
 {
     return htmlspecialchars($string, ENT_QUOTES | ENT_HTML5, 'UTf-8', true);
 }
+
+
 
 ?>
 
@@ -224,6 +222,17 @@ echo "The time is " . date("h:i:sa");
   I agree to the terms and conditions.</p>
   <p><input type="submit" value="Save"></p>
 </form>
-<pre><?php var_dump($_POST); ?>
+<?php 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $term = $_POST['term'];
+    echo 'You searched for ' . htmlspecialchars($term);
+
+} else { ?>
+    <form action="index.php" method="POST">
+        Search for: <input type="text" name="term">
+        <input type="submit" value="search">
+    </form>
+<?php } ?>
 
 <?php include 'includes/footer.php'; ?>
