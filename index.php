@@ -235,4 +235,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 <?php } ?>
 
+<?php
+$submitted = $_GET['sent'] ?? '';
+if ($submitted === 'search') {
+
+    $term = $_GET['term'] ?? '';
+    echo 'You searched for ' . htmlspecialchars($term);
+
+} else { ?>
+    <form action="index.php" method="GET">
+        Search for: <input type="text" name="term">
+        <input type="submit" value="search">
+    </form>
+<?php } ?>
+
 <?php include 'includes/footer.php'; ?>
