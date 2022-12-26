@@ -245,7 +245,7 @@ if ($submitted === 'search') {
 } else { ?>
     <form action="index.php" method="GET">
         Search for: <input type="text" name="term">
-        <input type="submit" value="search">
+        <input type="submit" name="sent" value="search">
     </form>
 <?php } ?>
 
